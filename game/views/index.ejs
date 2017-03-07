@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>TU Sexy Boy</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
   </head>
+  <style>
+  .bg-1{
+    background-color: #1abc9c;
+    color: #ffffff;
+  }
+  .container-fluid{
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+  </style>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <div class="container-fluid bg-1 text-center">
+    <div class="container text-center">
+      <h3>Let's Play</h3>
+      <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="https://openclipart.org/download/219326/1432343177.svg" class="img-circle" alt="play" width="250" height="250">
+      <h5>CS485 Web Application Development</h5>
+    </div>
+  </div>
+          <script>
+          function bigImg(x) {
+              x.style.height = '275px';
+              x.style.width = '275px';
+          }
+
+          function normalImg(x) {
+              x.style.height = '250px';
+              x.style.width = '250px';
+          }
+          </script>
   </body>
 </html>
