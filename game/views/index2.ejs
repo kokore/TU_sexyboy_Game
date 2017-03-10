@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mating season</title>
+    <script src="javascripts/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/flametext.css" />
+    <script src="javascripts/flametext.js"></script>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+    <script src="javascripts/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel='stylesheet' href='font/stylesheet.css' />
+    <style>
+        .bag {
+            background-color: #ff6699;
+        }
+
+        body {
+            background-color: #ff6699;
+        }
+
+        #start {
+            font-family: '5012_tlu_infectionregular';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row" id="main" background="images/main.png">
+
+        <div class="bag">
+            <div style="height:20px;">
+
+            </div>
+            <center>
+                <img src="images/main.png" alt="Mountain View">
+            </center>
+            <p style="font-size: 70px; text-align:center;" id="start">คันแล้วกดเลย</p>
+        </div>
+    </div>
+</body>
+<script>
+    $('#start').click(function() {
+        $.ajax({
+            url: "http://localhost:3000/game",
+            method: "get",
+            dataType: "text",
+            success: function(data) {
+                $('#main').html(data);
+            }
+        });
+    });
+    $('#test1').click(function() {
+        $.ajax({
+            url: "http://localhost:3000/bio",
+            method: "get",
+            dataType: "text",
+            success: function(data) {
+                $('#main').html(data);
+            }
+        });
+    });
+</script>
+
+</html>

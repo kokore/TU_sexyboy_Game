@@ -1,8 +1,27 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:70px;
+   width:100%;
+   background:#999;
+}
 
-a {
-  color: #00B7FF;
+
+
+
+@font-face {
+    font-family: '5012_tlu_infectionregular';
+    src: url('5012_tlu_infection-webfont.woff2') format('woff2'),
+         url('5012_tlu_infection-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
