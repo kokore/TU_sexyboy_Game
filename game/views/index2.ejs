@@ -39,6 +39,11 @@
                 <img src="images/main.png" alt="Mountain View">
             </center>
             <p style="font-size: 70px; text-align:center;" id="start">คันแล้วกดเลย</p>
+            <style>
+                #start:hover {
+                    color: white;
+                }
+            </style>
         </div>
     </div>
 </body>
@@ -46,16 +51,6 @@
     $('#start').click(function() {
         $.ajax({
             url: "http://localhost:3000/game",
-            method: "get",
-            dataType: "text",
-            success: function(data) {
-                $('#main').html(data);
-            }
-        });
-    });
-    $('#test1').click(function() {
-        $.ajax({
-            url: "http://localhost:3000/bio",
             method: "get",
             dataType: "text",
             success: function(data) {
