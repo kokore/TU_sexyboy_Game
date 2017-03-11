@@ -11,14 +11,26 @@ router.get('/selectBoy', function(req, res, next) {
 });
 
 router.get('/bio', function(req, res, next) {
+    console.log(req.query);
     if (req.query.name == 'in') {
         var fs = require("fs");
+<<<<<<< HEAD
         var obj = JSON.parse(fs.readFileSync("public/bio/bioin.json","utf8"));
         res.render('bio',{bio:'obj.bio'});
+=======
+        var obj = JSON.parse(fs.readFileSync('public/bio/bioin.json', 'utf8'));
+        res.render('bio', {
+            bio: "obj.bio"
+        });
+>>>>>>> 2187a0b15ec2fd0760ee494373ca6358f2e9fca3
     } else if (req.query.name == 'gr') {
-        res.render('bio',{biogr:"bio"});
-    } else if (req.query.name == 'ph') {   
-        res.render('bio',{bioph:"bio"});
+        res.render('bio', {
+            biogr: "bio"
+        });
+    } else if (req.query.name == 'ph') {
+        res.render('bio', {
+            bioph: "bio"
+        });
     } else {
         console.log('404');
     }
@@ -56,4 +68,3 @@ router.get('/question', function(req, res, next) {
     });
 });
 module.exports = router;
-r;
