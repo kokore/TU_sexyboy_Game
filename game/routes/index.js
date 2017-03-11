@@ -17,7 +17,8 @@ router.get('/bio', function(req, res, next) {
         var bioin = obj.bio;
         res.render('bio', {
             name: 'อิน',
-            bio: bioin
+            bio: bioin,
+            nickname: 'in'
         });
 
     } else if (req.query.name == 'gr') {
@@ -25,14 +26,16 @@ router.get('/bio', function(req, res, next) {
         var biogr = obj1.bio;
         res.render('bio', {
             name: 'กราฟ',
-            bio: biogr
+            bio: biogr,
+            nickname: 'gr'
         });
     } else if (req.query.name == 'ph') {
         var obj2 = JSON.parse(fs.readFileSync("public/bio/bioph.json", "utf8"));
         var bioph = obj2.bio;
         res.render('bio', {
             name: 'ริว',
-            bio: bioph
+            bio: bioph,
+            nickname: 'ph'
         });
     } else {
         console.log('404');

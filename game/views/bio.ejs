@@ -1,20 +1,23 @@
+<link rel="stylesheet" href="stylesheets/ribbon.css" />
 <div class="col-sm-6">
+
     <h1 class="ribbon">
-		<strong class="ribbon-content"><%= name %></strong>
+		<strong class="ribbon-content"><%= nickname %></strong>
 	</h1>
 
 </div>
 
-<div class="col-sm-6">
-
-    <%= bio %>
-
-        <h1 class="ribbon">
-
-        <h1 class="ribbon">
-
+<div class="col-sm-6" id="xxx">
+    <p style="text-align:center; font-size: 35px; font-family: '5012_tlu_infectionregular';"><%= bio %></p>
+    <h1 class="ribbon">
 		<strong class="ribbon-content">start</strong>
 	</h1>
 </div>
-1>
 </div>
+
+
+<script>
+    $('#xxx').click(function() {
+        changePage('http://localhost:3000/question?name=<%= nickname %>', 'get', 'text');
+    });
+</script>
