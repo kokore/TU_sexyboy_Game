@@ -13,8 +13,8 @@ router.get('/selectBoy', function(req, res, next) {
 router.get('/bio', function(req, res, next) {
     if (req.query.name == 'in') {
         var fs = require("fs");
-        var obj = JSON.parse(fs.readFileSync('/bio/bioin.json','utf8'));
-        res.render('bio',{bio:"obj.bio"});
+        var obj = JSON.parse(fs.readFileSync("public/bio/bioin.json","utf8"));
+        res.render('bio',{bio:'obj.bio'});
     } else if (req.query.name == 'gr') {
         res.render('bio',{biogr:"bio"});
     } else if (req.query.name == 'ph') {   
