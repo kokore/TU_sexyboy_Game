@@ -10,28 +10,31 @@ router.get('/selectBoy', function(req, res, next) {
     res.render('selectBoy');
 });
 
-router.get('/bio:name', function(req, res, next) {
+router.get('/bio', function(req, res, next) {
     if (req.query.name == 'in') {
 
         var fs = require("fs");
         var obj = JSON.parse(fs.readFileSync("public/bio/bioin.json", "utf8"));
+        var bioin = obj.bio;
         res.render('bio', {
-            bio: 'obj.bio'
+            biopeople: bioin
         });
 
     } else if (req.query.name == 'gr') {
 
-        var fs = require("fs");
-        var obj = JSON.parse(fs.readFileSync("public/bio/biogr.json", "utf8"));
+        var fs1 = require("fs");
+        var obj1 = JSON.parse(fs1.readFileSync("public/bio/biogr.json", "utf8"));
+        var biogr = obj1.bio; 
         res.render('bio', {
-            bio: 'obj.bio'
+            biopeople: biogr
         });
     } else if (req.query.name == 'ph') {
 
-        var fs = require("fs");
-        var obj = JSON.parse(fs.readFileSync("public/bio/bioph.json", "utf8"));
+        var fs2 = require("fs");
+        var obj2 = JSON.parse(fs2.readFileSync("public/bio/bioph.json", "utf8"));
+        var bioph = obj2.bio;
         res.render('bio', {
-            bio: 'obj.bio'
+            biopeople: bioph
         });
     } else {
         console.log('404');
