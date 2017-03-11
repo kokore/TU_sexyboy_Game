@@ -11,6 +11,7 @@ router.get('/selectBoy', function(req, res, next) {
 });
 
 router.get('/bio', function(req, res, next) {
+<<<<<<< HEAD
     // if (req.query.name == 'in') {
     //
     //     var fs = require("fs");
@@ -36,6 +37,36 @@ router.get('/bio', function(req, res, next) {
     // } else {
     //     console.log('404');
     // }
+=======
+    if (req.query.name == 'in') {
+
+        var fs = require("fs");
+        var obj = JSON.parse(fs.readFileSync("public/bio/bioin.json", "utf8"));
+        var bioin = obj.bio;
+        res.render('bio', {
+            biopeople: bioin
+        });
+
+    } else if (req.query.name == 'gr') {
+
+        var fs1 = require("fs");
+        var obj1 = JSON.parse(fs1.readFileSync("public/bio/biogr.json", "utf8"));
+        var biogr = obj1.bio; 
+        res.render('bio', {
+            biopeople: biogr
+        });
+    } else if (req.query.name == 'ph') {
+
+        var fs2 = require("fs");
+        var obj2 = JSON.parse(fs2.readFileSync("public/bio/bioph.json", "utf8"));
+        var bioph = obj2.bio;
+        res.render('bio', {
+            biopeople: bioph
+        });
+    } else {
+        console.log('404');
+    }
+>>>>>>> origin/master
 });
 router.get('/question', function(req, res, next) {
     var fs = require('fs');
