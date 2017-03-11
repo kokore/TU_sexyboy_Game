@@ -53,11 +53,18 @@ router.get('/question', function(req, res, next) {
     var ch3 = jsonformat.question[ch].choice[2];
     var ch4 = jsonformat.question[ch].choice[3];
     res.render('question', {
+        name: name,
+        ch: ch % 3 + 1,
+        im: ch + 1,
         dataq: question,
         c1: ch1,
         c2: ch2,
         c3: ch3,
         c4: ch4
     });
+});
+router.post('/result', function(req, res, next) {
+    console.log(req.body);
+    res.render('result');
 });
 module.exports = router;

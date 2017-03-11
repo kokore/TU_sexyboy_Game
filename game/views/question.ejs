@@ -1,46 +1,67 @@
-<!-- <%= dataq %>
-    <%= c1 %>
-        <%= c2 %>
-            <%= c3 %>
-                <%= c4 %> -->
-<!-- <script>
-    // nowQuestion = nowQuestion++;
-    // changePage('http://localhost:3000/question?name', 'get', 'text');
-</script> -->
-<!DOCTYPE html>
-<html lang="en">
+<center>
+    <div id="gameWindows" class="col-sm-12">
+        <center>
+            <img id="back" src="/images/pl<%= im %>.jpg" class="img-responsive" alt="Mountain View">
+            <img id="cha" src="/images/<%= name %><%= ch %>.png" class="img-responsive" alt="Mountain View">
+        </center>
+    </div>
+    <div class="col-sm-12">
+        <p id="ques">
+            <%= dataq %>
+        </p>
+    </div>
+    <div class="col-sm-12">
+        <button class="btn btn-info" onclick="send(1)">
+                  <%= c1 %>
+                </button>
+        <button class="btn btn-info" onclick="send(2)">
+                  <%= c2 %>
+                </button>
+        <button class="btn btn-info" onclick="send(3)">
+                  <%= c3 %>
+                </button>
+        <button class="btn btn-info" onclick="send(4)">
+                  <%= c4 %>
+                </button>
+    </div>
+</center>
+<style>
+    #gameWindows {
+        position: relative;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mating season</title>
-    <script src="javascripts/jquery-3.1.1.min.js"></script>
-    <link rel="stylesheet" href="/stylesheets/flametext.css" />
-    <script src="javascripts/flametext.js"></script>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
-    <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/myScript.js"></script>
-    <link rel='stylesheet' href='stylesheets/style.css' />
-    <link rel='stylesheet' href='font/stylesheet.css' />
-    <style>
-        .bag {
-            background-color: #ff6699;
+    #back {
+        z-index: 0;
+        height: 500px;
+    }
+
+    #cha {
+        position: absolute;
+        left: 35%;
+        top: 0px;
+        height: 500px;
+        z-index: 1;
+    }
+
+    #ques {
+        border: 5px solid #ba89b6;
+        background-color: #f0f0f0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: "5012_tlu_infectionregular";
+        font-size: 40px;
+    }
+</style>
+<script>
+    function send(c) {
+        if (nowQuestion >= 5) {
+            changePage('http://localhost:3000/result', 'get', 'text');
+
         }
+        choice[nowQuestion - 1] = c;
+        nowQuestion++;
+        changePage('http://localhost:3000/question?name=<%= name %>&c=' + nowQuestion, 'get', 'text');
+    }
+</script>
 
-        body {
-            background-color: #ff6699;
-        }
-
-        #start,
-        #howTo {
-            font-family: '5012_tlu_infectionregular';
-        }
-    </style>
-</head>
-
-<body>
-
-</body>
-
-</html>
+</script>

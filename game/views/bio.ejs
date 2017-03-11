@@ -2,13 +2,15 @@
 <div class="col-sm-6">
 
     <h1 class="ribbon">
-		<strong class="ribbon-content"><%= nickname %></strong>
+		<strong class="ribbon-content"  style="font-family: '5012_tlu_infectionregular'; font-size: 30px;"><%= name %></strong>
 	</h1>
 
 </div>
 
 <div class="col-sm-6" id="xxx">
-    <p style="text-align:center; font-size: 35px; font-family: '5012_tlu_infectionregular';"><%= bio %></p>
+    <p style="text-align:center; font-size: 35px; font-family: '5012_tlu_infectionregular';">
+        <%= bio %>
+    </p>
     <h1 class="ribbon">
 		<strong class="ribbon-content">start</strong>
 	</h1>
@@ -18,6 +20,6 @@
 
 <script>
     $('#xxx').click(function() {
-        changePage('http://localhost:3000/question?name=<%= nickname %>', 'get', 'text');
+        changePage('http://localhost:3000/question?name=<%= nickname %>&c=1', 'get', 'text');
     });
 </script>
