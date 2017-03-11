@@ -11,8 +11,10 @@
     <script src="javascripts/flametext.js"></script>
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
     <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/myScript.js"></script>
     <link rel='stylesheet' href='stylesheets/style.css' />
     <link rel='stylesheet' href='font/stylesheet.css' />
+
     <style>
         .bag {
             background-color: #ff6699;
@@ -22,7 +24,8 @@
             background-color: #ff6699;
         }
 
-        #start {
+        #start,
+        #howTo {
             font-family: '5012_tlu_infectionregular';
         }
     </style>
@@ -33,14 +36,15 @@
 
         <div class="bag">
             <div style="height:20px;">
-
             </div>
             <center>
-                <img src="images/main.png" alt="Mountain View">
+                <img id="mainPic" src="images/main.png" class="img-responsive" alt="Mountain View">
             </center>
             <p style="font-size: 70px; text-align:center;" id="start">คันแล้วกดเลย</p>
+            <p style="font-size: 30px; text-align:center;" id="howTo">??? How to จีบ ???</p>
             <style>
-                #start:hover {
+                #start:hover,
+                #howTo:hover {
                     color: white;
                 }
             </style>
@@ -48,14 +52,32 @@
     </div>
 </body>
 <script>
-    $('#start').click(function() {
-        $.ajax({
-            url: "http://localhost:3000/game",
-            method: "get",
-            dataType: "text",
-            success: function(data) {
-                $('#main').html(data);
-            }
+    $(document).ready(function() {
+        $('#start').click(function() {
+            // nextPage = function() {
+            //     $.ajax({
+            //         url: 'http://localhost:3000/game',
+            //         method: 'get',
+            //         dataType: 'text',
+            //         async: false,
+            //         success: function(data) {
+            //             $('#main').html(data);
+            //         }
+            //     });
+            // }
+            changePage('http://localhost:3000/game', 'get', 'text');
+            // jQuery('#main').fadeOut('slow', function() {
+            //     $.ajax({
+            //         url: 'http://localhost:3000/game',
+            //         method: 'get',
+            //         dataType: 'text',
+            //         async: false,
+            //         success: function(data) {
+            //             $('#main').html(data);
+            //         }
+            //     });
+            // });
+            // jQuery('#main').fadeIn('slow');
         });
     });
 </script>

@@ -58,7 +58,7 @@
 
 <div class=" col-sm-4 ">
     <center>
-        <img src="/images/C4iGL4yVcAAl8-R.png" class="img-responsive img-circle margin" style="width:70%">
+        <img src="/images/min1.png" class="img-responsive img-circle margin" style="height:300px">
     </center>
     <h1 class="ribbon " id="test1">
 		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">อิน</strong>
@@ -66,7 +66,9 @@
 </div>
 
 <div class="col-sm-4 ">
-    <img src="/images/IMG_20170301_212622.png" class="img-responsive img-circle margin" style="width:100%">
+    <center>
+        <img src="/images/mg1.png" class="img-responsive img-circle margin" style="height:300px">
+    </center>
     <h1 class="ribbon ">
 		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">เกรท</strong>
 	</h1>
@@ -74,7 +76,7 @@
 
 <div class="col-sm-4 ">
     <center>
-        <img src="/images/IMG_20170301_213319.png" class="img-responsive img-circle margin" style="width:70%">
+        <img src="/images/mp1.png" class="img-responsive img-circle margin" style="height:300px">
     </center>
 
     <h1 class="ribbon">
@@ -83,13 +85,6 @@
 </div>
 <script>
     $('#test1').click(function() {
-        $.ajax({
-            url: "http://localhost:3000/bio",
-            method: "get",
-            dataType: "text",
-            success: function(data) {
-                $('#main').html(data);
-            }
-        });
+        changePage('http://localhost:3000/bio', 'get', 'text');
     });
 </script>
