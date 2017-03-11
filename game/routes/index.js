@@ -11,13 +11,14 @@ router.get('/selectBoy', function(req, res, next) {
 });
 
 router.get('/bio', function(req, res, next) {
-    res.render('bio');
     if (req.query.name == 'in') {
-
+        var fs = require("fs");
+        var obj = JSON.parse(fs.readFileSync('/public/bio/bioin.json','utf8'));
+        res.render('bio',{bio:""+obj.bio});
     } else if (req.query.name == 'gr') {
-
-    } else if (req.query.name == 'ph') {
-
+        res.render('bio',{biogr:"bio"});
+    } else if (req.query.name == 'ph') {   
+        res.render('bio',{bioph:"bio"});
     } else {
         console.log('404');
     }
