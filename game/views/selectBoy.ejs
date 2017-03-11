@@ -56,30 +56,30 @@
     <p style="text-align:center; font-size: 70px; font-family: '5012_tlu_infectionregular';">เลือกผู้ชายของคุณ</p>
 </div>
 
-<div class=" col-sm-4 ">
+<div class=" col-sm-4 " id="in">
     <center>
-        <img src="/images/min1.png" class="img-responsive img-circle margin" style="height:300px">
+        <img src="/images/in1.png" class="img-responsive " style="height:300px">
     </center>
-    <h1 class="ribbon " id="in">
+    <h1 class="ribbon ">
 		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">อิน</strong>
 	</h1>
 </div>
 
-<div class="col-sm-4 ">
+<div class="col-sm-4 " id="gr">
     <center>
-        <img src="/images/mg1.png" class="img-responsive img-circle margin" style="height:300px">
+        <img src="/images/g1.png" class="img-responsive " style="height:300px">
     </center>
-    <h1 class="ribbon " id="gr">
+    <h1 class="ribbon ">
 		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">เกรท</strong>
 	</h1>
 </div>
 
-<div class="col-sm-4 ">
+<div class="col-sm-4 " id="ph">
     <center>
-        <img src="/images/mp1.png" class="img-responsive img-circle margin" style="height:300px">
+        <img src="/images/p1.png" class="img-responsive " style="height:300px">
     </center>
 
-    <h1 class="ribbon" id="ph">
+    <h1 class="ribbon">
 		<strong class="ribbon-content" style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">พอร์ช</strong>
 	</h1>
 </div>
@@ -94,3 +94,20 @@
         changePage('http://localhost:3000/bio?name=ph', 'get', 'text');
     });
 </script>
+<style>
+    #gr,
+    #in,
+    #ph {
+        -webkit-filter: grayscale(100%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+    }
+
+    #gr:hover,
+    #in:hover,
+    #ph:hover {
+        -webkit-filter: grayscale(0%);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(0%);
+    }
+</style>

@@ -14,7 +14,6 @@
     <script src="javascripts/myScript.js"></script>
     <link rel='stylesheet' href='stylesheets/style.css' />
     <link rel='stylesheet' href='font/stylesheet.css' />
-
     <style>
         .bag {
             background-color: #ff6699;
@@ -52,6 +51,8 @@
     </div>
 </body>
 <script>
+    var nowQuestion;
+    var choice1, choice2, choice3, choice4, choice5;
     $(document).ready(function() {
         $('#start').click(function() {
             changePage('http://localhost:3000/selectBoy', 'get', 'text');
