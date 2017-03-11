@@ -23,5 +23,37 @@ router.get('/bio', function(req, res, next) {
         console.log('404');
     }
 });
-
+router.get('/question', function(req, res, next) {
+    var fs = require('fs');
+    var ch = req.query.c - 1;
+    var name = req.query.name;
+    var readfromfile = fs.readFileSync('public/question/p.' + name + '.json', 'utf8');
+    var jsonformat = JSON.parse(readfromfile);
+    var question = jsonformat.question[ch].namequestion;
+    var ch1 = jsonformat.question[ch].choice[0];
+    var ch2 = jsonformat.question[ch].choice[1];
+    var ch3 = jsonformat.question[ch].choice[2];
+    var ch4 = jsonformat.question[ch].choice[3];
+    // if (req.query.name == 'in') {
+    //     // var data1 = fs.readFileSync("question/p.in.json",
+    //     //     "utf8");
+    //     // console.log(data);
+    //     console.log('in');
+    //
+    // } else if (req.query.name == 'gr') {
+    //
+    // } else if (req.query.name == 'ph') {
+    //
+    // } else {
+    //     console.log('404');
+    // }
+    res.render('question', {
+        dataq: question,
+        c1: ch1,
+        c2: ch2,
+        c3: ch3,
+        c4: ch4
+    });
+});
 module.exports = router;
+r;
