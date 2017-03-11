@@ -54,30 +54,7 @@
 <script>
     $(document).ready(function() {
         $('#start').click(function() {
-            // nextPage = function() {
-            //     $.ajax({
-            //         url: 'http://localhost:3000/game',
-            //         method: 'get',
-            //         dataType: 'text',
-            //         async: false,
-            //         success: function(data) {
-            //             $('#main').html(data);
-            //         }
-            //     });
-            // }
-            changePage('http://localhost:3000/game', 'get', 'text');
-            // jQuery('#main').fadeOut('slow', function() {
-            //     $.ajax({
-            //         url: 'http://localhost:3000/game',
-            //         method: 'get',
-            //         dataType: 'text',
-            //         async: false,
-            //         success: function(data) {
-            //             $('#main').html(data);
-            //         }
-            //     });
-            // });
-            // jQuery('#main').fadeIn('slow');
+            changePage('http://localhost:3000/selectBoy', 'get', 'text');
         });
     });
 </script>

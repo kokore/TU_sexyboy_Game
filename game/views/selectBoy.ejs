@@ -60,7 +60,7 @@
     <center>
         <img src="/images/min1.png" class="img-responsive img-circle margin" style="height:300px">
     </center>
-    <h1 class="ribbon " id="test1">
+    <h1 class="ribbon " id="in">
 		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">อิน</strong>
 	</h1>
 </div>
@@ -69,7 +69,7 @@
     <center>
         <img src="/images/mg1.png" class="img-responsive img-circle margin" style="height:300px">
     </center>
-    <h1 class="ribbon ">
+    <h1 class="ribbon " id="gr">
 		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">เกรท</strong>
 	</h1>
 </div>
@@ -79,12 +79,18 @@
         <img src="/images/mp1.png" class="img-responsive img-circle margin" style="height:300px">
     </center>
 
-    <h1 class="ribbon">
+    <h1 class="ribbon" id="ph">
 		<strong class="ribbon-content" style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">พอร์ช</strong>
 	</h1>
 </div>
 <script>
-    $('#test1').click(function() {
-        changePage('http://localhost:3000/bio', 'get', 'text');
+    $('#in').click(function() {
+        changePage('http://localhost:3000/bio?name=in', 'get', 'text');
+    });
+    $('#gr').click(function() {
+        changePage('http://localhost:3000/bio?name=gr', 'get', 'text');
+    });
+    $('#ph').click(function() {
+        changePage('http://localhost:3000/bio?name=ph', 'get', 'text');
     });
 </script>
