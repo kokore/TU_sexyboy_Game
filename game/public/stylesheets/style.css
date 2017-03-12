@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 30px '5012_tlu_infectionregular', Helvetica, Arial, sans-serif;
 }
 #footer {
    position:fixed;
@@ -21,6 +21,7 @@ body {
     font-style: normal;
 }
 /* IE 6 */
+
 * html #footer {
    position:absolute;
    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
