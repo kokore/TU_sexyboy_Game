@@ -54,13 +54,17 @@
 </style>
 <script>
     function send(c) {
-        if (nowQuestion >= 5) {
-            changePage('http://localhost:3000/result', 'get', 'text');
-
-        }
         choice[nowQuestion - 1] = c;
-        nowQuestion++;
-        changePage('http://localhost:3000/question?name=<%= name %>&c=' + nowQuestion, 'get', 'text');
+        if (nowQuestion >= 5) {
+            for (i = 0; i < 5; i++) {
+                console.log(choice[i]);
+            }
+            changePage('http://localhost:3000/result?name=<%= name %>&c1=' + choice[0] + '&c2=' + choice[1] + '&c3=' + choice[2] + '&c4=' + choice[3] + '&c5=' + choice[4], 'get', 'text');
+        } else {
+            nowQuestion++;
+            changePage('http://localhost:3000/question?name=<%= name %>&c=' + nowQuestion, 'get', 'text');
+        }
+
     }
 </script>
 
