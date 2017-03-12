@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index2');
+    res.render('index');
 });
 
 router.get('/selectBoy', function(req, res, next) {
@@ -47,7 +47,7 @@ router.get('/question', function(req, res, next) {
     var name = req.query.name;
     var readfromfile = fs.readFileSync('public/question/p.' + name + '.json', 'utf8');
     var jsonformat = JSON.parse(readfromfile);
-    var question = jsonformat.question[ch].namequestion;x``
+    var question = jsonformat.question[ch].namequestion;
     var ch2 = jsonformat.question[ch].choice[1];
     var ch3 = jsonformat.question[ch].choice[2];
     var ch4 = jsonformat.question[ch].choice[3];
