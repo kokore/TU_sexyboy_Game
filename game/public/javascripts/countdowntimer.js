@@ -29,7 +29,7 @@ function initializeClock(id, endtime) {
     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
     if (t.total <= 0) {
-      clearInterval(timeinterval);
+      changePage('http://localhost:3000/question?name=<%= nickname %>', 'get', 'text');
     }
   }
 
