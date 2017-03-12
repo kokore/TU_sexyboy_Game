@@ -67,25 +67,26 @@
 
 <div class="col-sm-4 " id="gr">
     <center>
-        <img src="/images/g1.png" class="img-responsive " style="height:300px">
+        <img src="/images/gr1.png" class="img-responsive " style="height:300px">
     </center>
     <h1 class="ribbon ">
-		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">เกรท</strong>
+		<strong class="ribbon-content " style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">กราฟ</strong>
 	</h1>
 </div>
 
 <div class="col-sm-4 " id="ph">
     <center>
-        <img src="/images/p1.png" class="img-responsive " style="height:300px">
+        <img src="/images/ph1.png" class="img-responsive " style="height:300px">
     </center>
 
     <h1 class="ribbon">
-		<strong class="ribbon-content" style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">พอร์ช</strong>
+		<strong class="ribbon-content" style="font-family: '5012_tlu_infectionregular'; font-size: 30px;">ริว</strong>
 	</h1>
 </div>
 <script>
     $('#in').click(function() {
         changePage('http://localhost:3000/bio?name=in', 'get', 'text');
+
     });
     $('#gr').click(function() {
         changePage('http://localhost:3000/bio?name=gr', 'get', 'text');
@@ -110,5 +111,4 @@
         /* Safari 6.0 - 9.0 */
         filter: grayscale(0%);
     }
-
 </style>
